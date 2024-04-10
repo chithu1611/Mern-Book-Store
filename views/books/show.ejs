@@ -1,0 +1,37 @@
+<h1 class="page-header">
+    <%= bkelem.title %>
+</h1>
+
+<div class="book-details">
+
+    <div>
+        <img class="book-cover" src="<%= bkelem.bookCoverImagePath %>">
+
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary" href="/books/<%= bkelem.id %>/edit">Edit</a>
+            <%- include('../partials/deleteform', {url: `/books/${bkelem.id}`}) %>
+            <a class="btn btn-primary book-details-author-button" href="/authors/<%= bkelem.author.id %>">View Author</a>
+        </div>
+        
+    </div>
+    
+
+    <div class="book-details-grid">
+
+        <div class="book-details-label">Author :</div>
+         <!-- "author.name"  instead of accessing the ObjectID of the suthor which is stored in database we actually access the Object, That's why "author.book"-->
+        <div> <%= bkelem.author.name %> </div>
+        <div class="book-details-label">Publish Date :</div>
+        <div> <%= bkelem.publishDate.toDateString() %> </div>
+        <div class="book-details-label">Page Count :</div>
+        <div> <%= bkelem.pageCount %> </div>
+        <div class="book-details-label">Description :</div>
+        <div> <%= bkelem.description %> </div>
+
+
+    </div>
+    
+
+    
+
+</div>

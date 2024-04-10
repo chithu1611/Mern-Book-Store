@@ -1,0 +1,4 @@
+<!-- We created a form for delete request because google always take the get request , if we declare a delete request it might get delete all the "id" because it while it searches for that id , it delete the "id" of other -->
+<form method="post" action="<%= url %>?_method=delete">
+    <button class="btn btn-danger" type="submit">Delete</button>
+</form>

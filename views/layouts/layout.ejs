@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- File Pound for File uploading -->
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" /> 
+    <!-- File encode plug-in -->
+        <!-- <script  src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>  -->
+    <!-- Image Preview Plug-in -->
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet"/>
+        <!-- <script  src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script> -->
+    <!-- Image Resize -->
+        <!-- <script  src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script> -->
+
+        <!-- <script  src="https://unpkg.com/filepond@^4/dist/filepond.js"></script> -->
+    
+    <!-- defer means load the script file after the body of the page -->
+    <link id="main-css" rel="stylesheet" href="/stylesheets/main.css">
+
+
+    <title>Booking App</title>
+</head>
+<body>
+    <div class="container">
+        <%- include("../partials/header.ejs") %>
+        <%- include("../partials/errorMessage.ejs") %>
+        <div class="inner-container">
+            <%- body %>
+        </div>
+    </div>
+    
+</body>
+<!-- <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        if (typeof FilePond !== 'undefined') {
+            FilePond.registerPlugin(
+                FilePondPluginFileEncode,
+                FilePondPluginImageResize,
+                FilePondPluginImagePreview,
+            );
+
+            FilePond.setOptions({
+                stylePanelAspectRatio: 150/100,
+                imageResizeTargetWidth: 100,
+                imageResizeTargetHeight: 150,
+            });
+
+            FilePond.parse(document.body);
+        } else {
+            console.error('FilePond library not loaded.');
+        }
+    });
+</script> -->
+
+<script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+<script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+
+
+<script src="/javascripts/fileUpload.js"></script>
+</html>
